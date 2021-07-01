@@ -1,0 +1,11 @@
+---
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker bulid -t lnbnatera/docker-react -f Dockerfile.dev .
+
+script:
+  - docker run lnbnatera/docker-react npm run test -- --coverage
+...
